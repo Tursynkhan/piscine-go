@@ -1,3 +1,3 @@
 
-echo "Hello Tursynkhan!"
+echo "Hello tursynkhan!"
 
