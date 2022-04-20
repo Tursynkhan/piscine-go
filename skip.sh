@@ -1,1 +1,1 @@
-for x in {1..20}; do echo $x ; done | sed -n 'n;p'
+ls -l | sed '1~2d'
