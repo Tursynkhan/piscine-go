@@ -1,1 +1,1 @@
-find piscine-go -type f \( -name '[az]*[az]' -o -name '[az]' \)
+find home/desktop/piscine-go -type f \( -name '[az]*[az]' -o -name '[az]' \)
