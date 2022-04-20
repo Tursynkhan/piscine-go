@@ -1,1 +1,1 @@
-find desktop/piscine-go -type f -name '[az]*[az]'
+find -name "a*" -o -name "*z" -o -name "z*a!"
