@@ -15,7 +15,13 @@ func PrintComb2() {
 						z01.PrintRune(d)
 						z01.PrintRune(',')
 						z01.PrintRune(' ')
-
+						if i == 9 && j == 9 {
+							break
+							z01.PrintRune(',')
+							z01.PrintRune(' ')
+						} else {
+							continue
+						}
 					}
 				}
 			}
