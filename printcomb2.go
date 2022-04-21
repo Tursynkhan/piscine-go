@@ -5,15 +5,15 @@ import "github.com/01-edu/z01"
 func PrintComb2() {
 	for i := 0; i <= 9; i++ {
 		for j := 0; j <= 9; j++ {
-			for z := 0; z <= 9; z++ {
-				for d := 0; d <= 9; d++ {
-					if (i <= z && j < d) || (i < d) {
+			for k := 0; k <= 9; k++ {
+				for l := 0; l <= 9; l++ {
+					if (i <= k && j < l) || (i < k) {
 
 						z01.PrintRune('0' + rune(i))
 						z01.PrintRune('0' + rune(j))
 						z01.PrintRune(' ')
-						z01.PrintRune('0' + rune(z))
-						z01.PrintRune('0' + rune(d))
+						z01.PrintRune('0' + rune(k))
+						z01.PrintRune('0' + rune(l))
 						if i == 9 && j == 8 {
 							break
 						}
