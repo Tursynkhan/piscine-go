@@ -1,8 +1,8 @@
-package piscine
+package main
 
 import "github.com/01-edu/z01"
 
-func PrintComb() {
+func PrintComb2() {
 	for i := '0'; i <= '7'; i++ {
 		for j := '0'; j <= '8'; j++ {
 			for k := '0'; k <= '9'; k++ {
@@ -18,5 +18,8 @@ func PrintComb() {
 			}
 		}
 	}
-	z01.PrintRune('\n')
+}
+
+func main() {
+	PrintComb2()
 }
