@@ -1,5 +1,6 @@
 package piscine
 
-func DivMod(a int, b int) (int, int) {
-	return 13 / 2, 13 % 2
+func DivMod(a int, b int, div *int, mod *int) {
+	*div = a / b
+	*mod = a % b
 }
