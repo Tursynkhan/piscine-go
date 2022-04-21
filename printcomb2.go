@@ -9,13 +9,11 @@ func PrintComb2() {
 				for d := '0'; d <= '9'; d++ {
 					if (j <= d && i < z) && (i < j) {
 
-						z01.PrintRune(i)
-						z01.PrintRune(j)
+						z01.PrintRune('0' + rune(i))
+						z01.PrintRune('0' + rune(j))
 						z01.PrintRune(' ')
-						z01.PrintRune(z)
-						z01.PrintRune(d)
-						z01.PrintRune(',')
-						z01.PrintRune(' ')
+						z01.PrintRune('0' + rune(z))
+						z01.PrintRune('0' + rune(d))
 						if i == 9 && j == 8 {
 							break
 						}
