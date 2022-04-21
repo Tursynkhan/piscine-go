@@ -7,7 +7,7 @@ func PrintComb2() {
 		for j := 0; j <= 9; j++ {
 			for z := 0; z <= 9; z++ {
 				for d := 0; d <= 9; d++ {
-					if (j <= z && j < d) || (i < j) {
+					if (i <= z && j < d) || (i < d) {
 
 						z01.PrintRune('0' + rune(i))
 						z01.PrintRune('0' + rune(j))
