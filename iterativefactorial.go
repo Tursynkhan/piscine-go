@@ -7,7 +7,11 @@ func IterativeFactorial(nb int) int {
 		return 1
 	}
 	for i := 1; i <= nb; i++ {
-		nb *= i
+		if i < 0 || i > 12 {
+			return 0
+		} else {
+			nb *= 1
+		}
 	}
 	return nb
 }
