@@ -4,10 +4,9 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func QuadB(x, y int) {
+func QuadB(x, y int) int {
 	if x < 1 || y < 1 {
-		z01.PrintRune('\n')
-		z01.PrintRune(' ')
+		return 0
 	} else {
 		for i := 1; i <= y; i++ {
 			if i == 1 {
