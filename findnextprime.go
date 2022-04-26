@@ -1,21 +1,26 @@
 package piscine
 
-func IsPrime(n int) bool {
-	if n <= 1 {
+func IsPrime(nb int) bool {
+	if nb == 1 || nb <= 0 {
 		return false
 	}
-	for i := 2; i < n; i++ {
-		if n%i == 0 {
+	prime := 1
+	for i := 2; i < nb; i++ {
+		if ((nb % i) == 0) {
 			return false
 		}
 	}
-	return true
+	if prime == 1 {
+		return true
+	} else {
+		return false
+	}
 }
 
+
 func FindNextPrime(nb int) int {
-	for i := nb + 1; i < 1000000; i++ {
-		if IsPrime(i) {
-			return i
-		}
+	if nb <= 1 {
+		return 2
 	}
+	for i := 2; !IsPrime(i); i++
 }
