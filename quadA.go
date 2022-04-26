@@ -4,7 +4,7 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func QuadA(x, y int) {
+func QuadA(x, y int) int {
 	if x < 1 || y < 1 {
 		return 0
 	} else {
