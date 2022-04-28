@@ -12,10 +12,10 @@ func PrintNbrInOrder(n int) {
 		n = n / 10
 	}
 	for i := 0; i < len(arr)-1; i++ {
-		if arr[i] > arr[i+1] {
-			arr[i], arr[i+1] = arr[i+1], arr[i]
-		} else {
-			i += 1
+		for j := 0; j < len(arr)-i-1; j++ {
+			if arr[i] > arr[i+1] {
+				arr[i], arr[i+1] = arr[i+1], arr[i]
+			}
 		}
 	}
 	for i := 0; i < len(arr); i++ {
