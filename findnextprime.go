@@ -18,11 +18,9 @@ func IsPrime1(nb int) bool {
 }
 
 func FindNextPrime(nb int) int {
-	if nb <= 1 {
-		return 2
+	for i := nb; ; i++ {
+		if IsPrime(i) {
+			return i
+		}
 	}
-	for i := 2; !IsPrime1(i); i++ {
-		return i
-	}
-	return 0
 }
