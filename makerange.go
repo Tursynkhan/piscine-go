@@ -1,14 +1,14 @@
 package piscine
 
 func MakeRange(min, max int) []int {
-	var temp []int
 	if min >= max {
-		return temp
+		return nil
 	}
-
-	array := make([]int, min, max)
-	for i := 0; i < max-min; i++ {
-		array[i] = i + min
+	size := max - min
+	array := make([]int, size)
+	for i := 0; i < size; i++ {
+		array[i] = min
+		min++
 	}
 
 	return array
