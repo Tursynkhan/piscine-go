@@ -11,7 +11,7 @@ func main() {
 		for i := 0; i <= len(args)-1; i++ {
 			file, err := os.ReadFile(args[i])
 			if err != nil {
-				os.Stderr.WriteString("ERROR: open " + string(args[i]) + ":no such file or directory\n")
+				os.Stderr.WriteString("ERROR: open " + string(args[i]) + " :no such file or directory\n")
 				os.Exit(1)
 			}
 			os.Stderr.WriteString(string(file))
