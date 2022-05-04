@@ -1,29 +1,23 @@
 package main
-import(
-	"io"
+
+import (
+	"io/ioutil"
 	"os"
-	"github.com/01-edu/z01"
 )
 
-func main(){
-	args:=os.Args[1:]
-	if len(args)==0{
-		s:=os.Stdin
-		io.Copy(os.Stdout,s)
-	}else{
-		for i:=range args{
-			content, err:=os.ReadFile(args[i])
-			PrintStr(string(content))
-			if err!=nil{
-				str:="ERROR:"+err.Error()+"\n"
-				PrintStr(str)
+func main() {
+	args := os.Args[1:]
+	if len(args) >= 1 {
+		for i := 0; i <= len(args)-1; i++ {
+			file, err := os.ReadFile(args[i])
+			if err != nil {
+				os.Stderr.WriteString("ERROR: open " + string(args[i]) + ":no such file or directory\n")
 				os.Exit(1)
 			}
+			os.Stderr.WriteString(string(file))
 		}
-	}
-}
-func PrintStr(str string){
-	for_, w:= range str{
-		z01.PrintRune(w)
+	} else {
+		str, _ := ioutil.ReadAll(os.Stdin)
+		os.Stderr.WriteString(string(str))
 	}
 }
