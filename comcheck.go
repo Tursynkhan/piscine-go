@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func comcheck() {
+func main() {
 	args := os.Args[1:]
 	str := []string(args)
 	for i := 0; i < len(str); i++ {
