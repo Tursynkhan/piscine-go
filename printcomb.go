@@ -19,7 +19,3 @@ func PrintComb() {
 		}
 	}
 }
-
-func main() {
-	PrintComb()
-}
