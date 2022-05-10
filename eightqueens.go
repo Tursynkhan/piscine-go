@@ -17,9 +17,9 @@ func IsSafe(qn int, rp int, pos [8]int) bool {
 func solve(nb int, pos [8]int) {
 	if nb == 8 {
 		for i := 0; i < 8; i++ {
-			z01.PrintRune(rune(pos[i] + '1'))
+			z01.PrintRune(rune(pos[i] + 49))
 		}
-		z01.PrintRune('\n')
+		z01.PrintRune(10)
 	} else {
 		for i := 0; i < 8; i++ {
 			if IsSafe(nb, i, pos) {
