@@ -6,57 +6,68 @@ import (
 	"github.com/01-edu/z01"
 )
 
+func Len(r interface{}) int {
+	count := 0
+	switch a := r.(type) {
+	case []rune:
+		for range a {
+			count++
+		}
+	case []string:
+		for range a {
+			count++
+		}
+	case string:
+		for range a {
+			count++
+		}
+	}
+
+	return count
+}
+
 func main() {
-	argruments := os.Args[1:]
-	length := 0
-	for i := range argruments {
-		length = i + 1
-	}
-
-	if length != 0 {
-		str := ""
-		first := false
-
-		for _, arg := range argruments {
-			if first {
-				str += " "
-			}
-			first = true
-			str += arg
-		}
-
-		runes := []rune(str)
-		var pos []int
-		var vow []rune
-
-		for i, r := range runes {
-			if r == 'A' || r == 'E' || r == 'I' || r == 'O' || r == 'U' || r == 'a' || r == 'e' || r == 'i' || r == 'o' || r == 'u' {
-				pos = append(pos, i)
-				vow = append(vow, runes[i])
+	var a1, a2, rev []rune
+	for _, arg := range os.Args[1:] {
+		for _, k := range arg {
+			if containsRune("aeiouAEIOU", k) {
+				a1 = append(a1, k)
 			}
 		}
-		swap(vow)
-
-		for i := range pos {
-			runes[pos[i]] = vow[i]
-		}
-
-		for _, r := range runes {
-			z01.PrintRune(r)
-		}
-
 	}
+	for i := Len(a1) - 1; i >= 0; i-- {
+		rev = append(rev, a1[i])
+	}
+
+	m := 0
+	for i, arg := range os.Args[1:] {
+		for _, j := range arg {
+			if containsRune("aeiouAEIOU", j) {
+				a2 = append(a2, rev[m])
+				m++
+			} else {
+				a2 = append(a2, j)
+			}
+		}
+		if i != Len(os.Args)-1 {
+			a2 = append(a2, ' ')
+		}
+	}
+	PrintStr(string(a2))
 	z01.PrintRune('\n')
 }
 
-func swap(vow []rune) {
-	len := 0
-	for i := range vow {
-		len = i + 1
+func PrintStr(str string) {
+	for _, r := range str {
+		z01.PrintRune(r)
 	}
-	for i, j := 0, len-1; i < j; i, j = i+1, j-1 {
-		temp := vow[i]
-		vow[i] = vow[j]
-		vow[j] = temp
+}
+
+func containsRune(s string, r rune) bool {
+	for _, v := range s {
+		if v == r {
+			return true
+		}
 	}
+	return false
 }
