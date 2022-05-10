@@ -18,7 +18,7 @@ func Atoi(s string) int {
 					res = 0
 					break
 				}
-				res = res10 + int(s[i]-'0')
+				res = res*10 + int(s[i]-'0')
 			}
 			if bang == "nega" {
 				res = -1
