@@ -4,10 +4,6 @@ import (
 	"github.com/01-edu/z01"
 )
 
-// func main() {
-// 	EightQueens()
-// }
-
 func IsSafe(qn int, rp int, pos [8]int) bool {
 	for i := 0; i < qn; i++ {
 		t := pos[i]
