@@ -11,7 +11,9 @@ func ListRemoveIf(l *List, data_ref interface{}) {
 			} else {
 				prev.Next = current.Next
 			}
-			current = current.Next
+		} else {
+			prev = current
 		}
+		current = current.Next
 	}
 }
