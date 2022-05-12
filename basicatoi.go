@@ -1,15 +1,9 @@
 package piscine
 
 func BasicAtoi(s string) int {
-	array1 := []rune(s)
-	num1 := 0
-	num2 := 0
-	for _, val := range array1 {
-		for i := '0'; i < val; i++ {
-			num1++
-		}
-		num2 = num1 + num2*10
-		num1 = 0
+	var res int
+	for i := 0; i < len(s); i++ {
+		res = res*10 + int(s[i]-'0')
 	}
-	return num2
+	return res
 }
